@@ -1,0 +1,300 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Intro to JavaScript\r\n\r\n## 1. The Essentials of JS\r\n\r\nWelcome to the EOH JavaScript workshop. While walking through this notebook, you'll become familiar with the basics of manipulating JavaScript code, and by the end you'll have the essential skills needed to start on your EOH project!\r\n\r\nWe'll start with some basic tasks, and move on to combining our skills."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "First, let's start with the basics. Can you change this code so it prints out \"Hello World\"?"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let x = \"__\";\r\nconsole.log(__);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "ReferenceError",
+                                "message": "__ is not defined",
+                                "stack": "    at <Cell 3> [1, 0]\n    at <Cell 3> [5, 46]\n    at Script.runInContext (node:vm:139:12)\n    at Script.runInNewContext (node:vm:144:17)\n    at Object.runInNewContext (node:vm:298:38)\n    at C (c:\\Users\\jain9\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\jain9\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\jain9\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:520:28)\n    at k.emit (node:domain:475:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Nice job! \r\n\r\nNow, let's try assigning `a`, `b`, and `c` here so that the following code prints \"WiCys EOH team: 2022, let's go!\" to the console."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\nconsole.log(a+\": \"+b+\", \"+c);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Great! Now, let's try out a few more complex things.\r\n\r\nUnlike some languages, like Java and C++, JavaScript doesn't have you declare the types of variables outright. But that doesn't mean they don't have types. Try hovering over the names of the variables above, and see what pops up.\r\n\r\nLet's try an example. Guess what `c` and `d` will be, and then run the code below. Any guesses what's happening?"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let a = 5;\r\nlet b = \"5\";\r\nlet c = false;\r\nlet d = false;\r\nif(a==b){\r\n    c = true;\r\n}\r\nif(a===b){\r\n    d = true;\r\n}\r\nconsole.log(\"c is \"+c+\" and d is \"+d);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "c is true and d is false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "What just happened? The difference is between the `==` and `===` operators. The `==` operator coerces both values to the same type and compares their contents, while the `===` operator compares the type too.\r\n\r\nIn most code, including ours, it'll always be safer to use `===` to avoid strange behavior. \r\n\r\nThe `!=` and `!==` operators have a similar relationship. Always check your code for these types of mistakes!"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Complex Objects\r\n\r\nBut what if we wanted to build a more complicated variable, one with multiple attributes? Let's meet Ted."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let person = {name:\"Ted\", age:\"42\", occupation: \"mechanic\"};\r\nconsole.log(\"Who's this person? They're named \"+person.name+\r\n            \" and an age \"+person.age+\" \"+person.occupation+\".\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Who's this person? They're named Ted and an age 42 mechanic.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "As you can see, Ted is a 42-year old mechanic. But what you might not know is that Ted likes to knit in his free time! Can you add that information in as Ted's `hobby`?"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\nconsole.log(\"Ted has the attributes \" + Object.keys(person) +\r\n            \", and his hobby is of type \" + typeof(person.hobby));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Ted has the attributes name,age,occupation,hobby, and his hobby is of type string",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Congratulations! Maybe you can get him to knit you a scarf. Now let's leave Ted to his knitting, and move onto our next topic!\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Onto functions\r\n\r\nNow that we know the basics of using variables in JavaScript, let's move on to another essential unit of JS: functions.\r\n\r\nTry making it so sum(a, b) returns a+b in the below code."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function sum(a, b){\r\n\r\n}\r\n\r\nconsole.log(sum(5, 12));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "17",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "As you can see, you declare a function with the \"function\" keyword, in the format \r\n```\r\nfunction func_name(input1, input2, ..., inputn){\r\n    return x;\r\n}\r\n```\r\nFunctions make it easy to reuse code and bundle operations.\r\n\r\nYou can also throw errors within functions if you run into an issue, both accidentially or on purpose.\r\n\r\nRun the code below for an example."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function memory_accesser(a, b){\r\n    return b.func(a);\r\n}\r\ntry{\r\n    let x = memory_accesser(1, 2);\r\n    console.log(x);\r\n}\r\ncatch(error){\r\n    console.log(\"Oops, we made an error!\");\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Oops, we made an error!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Now, try catching an error of your own. When this function throws an error, print the error to the log!"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function positive_only(num){\r\n    if(num<=0){\r\n        throw(\"error! error! input was too small\")\r\n    }\r\n    return num;\r\n}\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "error! error! input was too small",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Into HTML\r\n\r\nCongrats! You've got the basics down. Now, let's try using JavaScript within some HTML code. \r\n\r\nTake a look at the following document."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "html",
+            "source": [
+                "<!DOCTYPE html>\r\n<html>\r\n<body>\r\n\r\n<h2>JavaScript HTML Example</h2>\r\n<p>Random Number Generator (1-100)</p>\r\n\r\n\r\n<script>\r\ndocument.getElementById(\"demo\").innerHTML = Math.ceil(Math.random()*100);\r\n</script>\r\n\r\n<p id=\"demo\"></p>\r\n\r\n</body>\r\n</html> "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/html",
+                            "value": [
+                                "<!DOCTYPE html>\r",
+                                "<html>\r",
+                                "<body>\r",
+                                "\r",
+                                "<h2>JavaScript HTML Example</h2>\r",
+                                "<p>Random Number Generator (1-100)</p>\r",
+                                "\r",
+                                "\r",
+                                "<script>\r",
+                                "document.getElementById(\"demo\").innerHTML = Math.ceil(Math.random()*100);\r",
+                                "</script>\r",
+                                "\r",
+                                "<p id=\"demo\"></p>\r",
+                                "\r",
+                                "</body>\r",
+                                "</html> "
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "As you can probably see, there's no `console.log()` here. That's because we don't want to print to the web console, we want to display it to the page. Instead, you'll be using a lot of `document.getElementById()` to change parts of the page. You can also use `alert()` to send alerts, but we won't generally need that.\r\n\r\nJavascript can also be used with HTML **events**. These are things that happen to HTML elements. For example, the mouse could move, or a key could be pressed, or a button could be clicked on.\r\n\r\nClick this [link](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_hello), paste the code below, and try making it print \"Hello! You are the xth Presser\" on that page, where `x` increases on each button press.\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "html",
+            "source": [
+                "<!DOCTYPE html>\r\n<html>\r\n<body>\r\n\r\n<h2>JavaScript HTML Events</h2>\r\n<p>Click the button to display the date.</p>\r\n\r\n<button onclick=\"greetings()\">Say \"Hello\"!</button>\r\n\r\n<script>\r\nfunction greetings() {\r\n}\r\n</script>\r\n\r\n<p id=\"demo\"></p>\r\n\r\n</body>\r\n</html> \r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Congratulations, you've finished the tutorial! You're ready to begin exploring on your own. Here are some helpful links:\r\n\r\nhttps://www.w3schools.com/js/default.asp\r\n\r\nhttps://www.tutorialspoint.com/javascript/index.htm\r\n\r\nhttps://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics\r\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
