@@ -1,0 +1,25 @@
+div {
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    /* make the width 200 px */
+    /* make the height 200 px */
+    /* make the margin 10 px */
+    /* make the padding 10 px */
+}
+
+#link_to_halls {
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    color: purple;
+    /* change the color of the link to blue */
+}
+
+.header {
+    background-color: aqua;
+    size: 10px;
+    /* make the font size 20 px */
+    /* make the font color green */
+    /* chenge the font family to Times New Roman*/
+    font-family: "Times New Roman";
+
+}
